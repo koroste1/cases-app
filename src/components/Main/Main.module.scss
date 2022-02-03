@@ -1,0 +1,16 @@
+.main{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  &__case{
+    background: #FFFFFF;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    box-sizing: border-box;
+    border-radius: 4px;
+    font-size: 16px;
+    padding: 4px;
+    min-width: 45%;
+    min-height: 28.4px;
+  }
+}
