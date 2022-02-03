@@ -1,0 +1,46 @@
+.radio {
+  &__input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+  }
+
+  &__span {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+    position: relative;
+
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      flex-grow: 0;
+      border: 1px solid #BC9CFF;
+      border-radius: 50%;
+      margin: 8px;
+      padding: 2px;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 50% 50%;
+      transition: all 150ms linear;
+    }
+
+    &:hover::before {
+      box-shadow: 0 0 3px 5px rgba(0, 255, 255, 0.3);
+      transition: background-color 100ms linear, box-shadow 100ms linear 100ms;
+    }
+
+    &:active::before {
+      background-color: rgba(0, 255, 230, 0.6);
+      box-shadow: 0 0 0 5px rgba(0, 255, 230, 0.6);
+    }
+  }
+
+  &__input:checked + &__span::before {
+    background-image: url('./radio.svg');
+    border-color: #00eaff;
+  }
+}

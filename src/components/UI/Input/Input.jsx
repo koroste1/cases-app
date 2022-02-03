@@ -1,9 +1,12 @@
 import React from 'react';
 import classes from './Input.module.scss';
 
-const Input = ({...props}) => {
+const Input = ({onChange, id, text, ...props}) => {
     return (
-        <input type='text' className={classes.input} {...props}/>
+        <div className={classes.block}>
+            <label htmlFor={id} className={classes.block__label}>{text}</label>
+            <input type='text' className={classes.block__input} onChange={onChange} id={id} {...props}/>
+        </div>
     );
 };
 

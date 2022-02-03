@@ -13,12 +13,15 @@ const Main = () => {
 // console.log(value)
     return (
         <div className={classes.main}>
-            <label htmlFor='input'>Введите существительное в именительном падеже единственного числа
-                <Input onChange={(e => setWord(e.target.value))} id='input'/>
-            </label>
-            <p className={classes.main__case}>{newWord}</p>
-            <Cases onChange={(e) => setValue(e.target.value)}/>
-            <Button onClick={() => checkCases(value, word, setNewWord)}>Перевести</Button>
+            <div className={classes.main__block}>
+                <Input onChange={(e => setWord(e.target.value))} id='input'
+                       text='Введите существительное в именительном падеже единственного числа'/>
+                <p className={classes.main__case}>{newWord}</p>
+            </div>
+            <div>
+                <Cases onChange={(e) => setValue(e.target.value)}/>
+                <Button onClick={() => word.trim().length>0 ? checkCases(value, word.trim(), setNewWord) : alert('Введите слово')}>Перевести</Button>
+            </div>
         </div>
     );
 };
